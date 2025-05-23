@@ -29,28 +29,28 @@ function addToIncomeList() {
 
 // Expense Added
 expenseBtn.addEventListener("click", () => {
-    if ((descInput.value == "") || (amountInput.value == "")) {             // if either type or amount fields are empty,
-    }                                                                       // do not add empty value to list
+    if ((descInput.value == "") || (amountInput.value == "")) {                         // if either type or amount fields are empty,
+    }                                                                                   // do not add empty value to list
     else {
-    const listItem = document.createElement("li")                           // create an li item of listItem
-    listItem.innerHTML = descInput.value + " " + -amountInput.value         // display the type and amount of expense
-    expenseList.appendChild(listItem)                                       // make listItem a childe of incomeList
-    balanceTotal.innerHTML = +balanceTotal.innerHTML + +-amountInput.value  // add the expense value (negative) to total balance
-    addToExpenseList()                                                      // run function to add input to expense array
-    clearInput()                                                            // run function to clear input fields
+    const listItem = document.createElement("li")                                       // create an li item of listItem
+    listItem.innerHTML = descInput.value + " - " + amountInput.value + " kr (Utgift)"   // display the type and amount of expense
+    expenseList.appendChild(listItem)                                                   // make listItem a childe of incomeList
+    balanceTotal.innerHTML = +balanceTotal.innerHTML + +-amountInput.value              // add the expense value (negative) to total balance
+    addToExpenseList()                                                                  // run function to add input to expense array
+    clearInput()                                                                        // run function to clear input fields
     }
 })
 
 // Income Added
 incomeBtn.addEventListener("click", () => {
-    if ((descInput.value == "") || (amountInput.value == "")) {             // if either type or amount fields are empty,
-    }                                                                       // do not add empty value to list
+    if ((descInput.value == "") || (amountInput.value == "")) {                         // if either type or amount fields are empty,
+    }                                                                                   // do not add empty value to list
     else {
-    const listItem = document.createElement("li")                           // create an li item of listItem
-    listItem.innerHTML = descInput.value + " " + amountInput.value          // display the type and amount of income
-    incomeList.appendChild(listItem)                                        // make listItem a childe of incomeList
-    balanceTotal.innerHTML = +balanceTotal.innerHTML + +amountInput.value   // add the amount value to total balance
-    addToIncomeList()                                                       // run function to add input to income array
-    clearInput()                                                            // run function to clear input fields
+    const listItem = document.createElement("li")                                       // create an li item of listItem
+    listItem.innerHTML = descInput.value + " - " + amountInput.value + " kr (Inkomst)"  // display the type and amount of income
+    incomeList.appendChild(listItem)                                                    // make listItem a childe of incomeList
+    balanceTotal.innerHTML = +balanceTotal.innerHTML + +amountInput.value               // add the amount value to total balance
+    addToIncomeList()                                                                   // run function to add input to income array
+    clearInput()                                                                        // run function to clear input fields
     }
 })
